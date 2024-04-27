@@ -9,12 +9,14 @@ public class PlayerPickUp : MonoBehaviour
     private bool holdingSquirrel;
     private GameObject target;
     public GameObject hand;
+    public int scoreInt;
 
 private void Start(){
     touchingSquirrel = false;
     hand.SetActive(false);
     bin = false;
     holdingSquirrel = false;
+    scoreInt = 0;
 }
 private void OnTriggerEnter(Collider other){
     if (other.gameObject.tag == "Enemy"){
@@ -39,8 +41,9 @@ private void Update(){
         hand.SetActive(true);
         holdingSquirrel = true;
     }
-    if (bin){
+    if (bin && holdingSquirrel){
         hand.SetActive(false);
+        scoreInt += 1;
         holdingSquirrel = false;
     }
 }
