@@ -7,7 +7,7 @@
 - NPC with dialogue and quest
 - Squirrel models with AI pathing, squirrels are able to be picked up and dumped, squirrels flail when in arms of player
 - Added custom sound and music
-- Barriers and boundaries so that the playey cannot leave the area
+- Barriers and boundaries so that the player cannot leave the area
 # References to resources used in the project
 - Music from #Uppbeat (free for Creators!):
 https://uppbeat.io/t/kevin-macleod/teddy-bear-waltz
