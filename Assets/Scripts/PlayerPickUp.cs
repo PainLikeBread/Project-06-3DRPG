@@ -10,6 +10,7 @@ public class PlayerPickUp : MonoBehaviour
     private GameObject target;
     public GameObject hand;
     public int scoreInt;
+    public AudioSource audio;
 
 private void Start(){
     touchingSquirrel = false;
@@ -36,13 +37,14 @@ private void OnTriggerExit(Collider other){
     }
 }
 private void Update(){
-    if (touchingSquirrel && Input.GetKeyDown(KeyCode.E) && !holdingSquirrel){
+    if (touchingSquirrel == true && Input.GetKeyDown(KeyCode.E) && !holdingSquirrel){
         Destroy(target);
         hand.SetActive(true);
         holdingSquirrel = true;
     }
     if (bin && holdingSquirrel){
         hand.SetActive(false);
+        audio.Play();
         scoreInt += 1;
         holdingSquirrel = false;
     }
